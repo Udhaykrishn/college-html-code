@@ -1,0 +1,27 @@
+<style>
+    .layer {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      border-radius: 50%;
+      transition: all 0.5s ease-in-out;
+    }
+  </style>
+  <body>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  
+    <script>
+      function moveLayers() {
+        let count = 150;
+        document.querySelectorAll(".layer").forEach((data) => {
+          data.style.transform = `translate(${count}px,${count}px)`;
+          count += 150;
+        });
+      }
+      setTimeout(moveLayers, 1000);
+    </script>
+  </body>
+  

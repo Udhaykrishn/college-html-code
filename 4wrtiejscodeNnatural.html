@@ -1,0 +1,26 @@
+<head>
+    <script>
+        function sum(n){
+            let sum = 0;
+            for(let i=1; i<=n; i++){
+                sum += i;
+            }
+            return sum;
+        }
+
+        function calc(){
+            const N = parseInt(document.querySelector("#input").value)
+
+            if(!isNaN(N) && N > 0){
+                const sumOf = sum(N)
+                alert("Sum is " + sumOf)
+            }else{
+                alert("Enter Positive Number")
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="calc()">Calc</button>
+</body>

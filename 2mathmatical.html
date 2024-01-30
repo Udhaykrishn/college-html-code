@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="number" />
+    <button onclick="calc()">Click</button>
+
+    <script>
+      function calc() {
+        const number = document.querySelector("#number");
+        if (!number) {
+          alert("Input is required");
+        } else {
+          const result = eval(number.value);
+          number.value = result
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Current Date in words</h2>
+    <p id="dateInWords"></p>
+
+    <script>
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      const daysOfMonth = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      const date = new Date();
+
+      const day = daysOfWeek[date.getDay()];
+      const month = daysOfMonth[date.getMonth()];
+      const year = date.getFullYear();
+
+      console.log(day,month,year)
+
+      document.getElementById(
+        "dateInWords"
+      ).innerHTML = `Today is ${day},${month},${year}`;
+    </script>
+  </body>
+</html>

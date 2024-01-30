@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+</head>
+<body>
+    <h2>Form Validation</h2>
+
+    <form>
+        Email: <input type="text"  id="email" /><br /><br />
+        Mobile: <input type="text"  id="mobile" /><br /><br />
+        Textbox: <input type="text"  id="textbox" /><br /><br />
+
+        Gender:
+        <input type="radio" id="male" name="gender"  value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender"  value="female" />
+        <label for="female">Female</label><br /><br />
+
+        Interests:
+        <input type="checkbox" id="music" name="interests"  value="music" />
+        <label for="music">Music</label>
+        <input type="checkbox" id="sports" name="interests" value="sports" />
+        <label for="sports">Sports</label><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const field = document.querySelector("form")
+
+        field.addEventListener('submit',(e)=>{
+            e.preventDefault()
+
+            if(form()){
+                alert("Successfully submited")
+            }
+
+        })
+
+        function form(){
+            const email = document.querySelector("#email").value
+            const mobile = document.querySelector("#mobile").value
+            const textbox = document.querySelector("#textbox").value
+            let isValid = true;
+            let errorMessage = ""
+
+            if(!validateEmail(email)){
+                errorMessage += "Invalid email format.\n"
+                isValid = false;
+            }
+
+            if(mobile.length !== 10){
+                errorMessage += "Mobile number should be 10 characters.\n";
+                isValid = false;
+            }
+            if(email === "" || mobile === ""|| textbox === ""){
+                errorMessage += "Please fill in all fields\n";
+                isValid = false;
+            }
+            if(!isValid){
+                alert(errorMessage);
+                return false;
+            }
+
+            alert('Successfully added the form');
+            return true;
+        }
+
+        function validateEmail(data){
+            const regx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regx.test(data);
+        }
+    </script>
+</body>
+</html>
